@@ -13,7 +13,7 @@ namespace ProductAPI.Controllers
 {
     [Route("[action]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ProductsController : ControllerBase
     {
         private readonly ProductAPIContext _context;
@@ -53,7 +53,7 @@ namespace ProductAPI.Controllers
 
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost("{id}")]
+        [HttpPost("{id}/{rating}")]
         public async Task<IActionResult> addProductRating(int id, int rating)
         {
             if (!(rating > 0 && rating <= 5))
